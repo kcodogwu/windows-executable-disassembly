@@ -117,10 +117,10 @@ Using the C programming language, I believe the code for sub_401000 would almost
           byte_40A300[(var_8 & 0x80000003)])
         );
 	
-	      var_4++;
-	      var_8++;
+        var_4++;
+        var_8++;
       } while (arg_4[var_4 - 1] != '\0');
-  
+    
       return;
     }
 		
