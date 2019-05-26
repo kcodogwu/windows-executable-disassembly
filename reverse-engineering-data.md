@@ -2,6 +2,7 @@
 
 The data region of the Windows executable being reversed-engineered.
 
+    
 		.data:0040A000                 ;org 40A000h
     .data:0040A000 unk_40A000      db  8Ah ; è             ; DATA XREF: _main+8o
     .data:0040A001                 db  48h ; H
