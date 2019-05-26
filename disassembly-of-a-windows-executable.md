@@ -84,17 +84,17 @@ The variables and constants, as named by IDA Pro’s disassembly process, found 
 
 *Figure 1 Flowchart showing algorithm of _main function*
 
-* offset unk_40A000 = 0x0040A000
-* offset szServerName = 0x0040B9C0
-* offset unk_40A100 = 0x0040A100	
-* offset szUserName = 0x0040B3C0
-* offset  unk_40A200 = 0x0040A200
-* offset szPassword = 0x0040BFC0
-* offset unk_40A308 = 0x0040A308
-* offset szLocalFile = 0x0040B7C0
-* offset unk_40A408 =  0x0040A408
-* offset FileName = 0x0040BBC0
-* offset unk_40A508 = 0x0040A508
-* offset unk_40BDC0 = 0x0040BDC0
-* offset unk_40A608 = 0x0040A608
-* offset szRemoteFile = 0x0040C1C0
+* `offset unk_40A000` = `0x0040A000`
+* `offset szServerName` = `0x0040B9C0`
+* `offset unk_40A100` = `0x0040A100`	
+* `offset szUserName` = `0x0040B3C0`
+* `offset  unk_40A200` = `0x0040A200`
+* `offset szPassword` = `0x0040BFC0`
+* `offset unk_40A308` = `0x0040A308`
+* `offset szLocalFile` = `0x0040B7C0`
+* `offset unk_40A408` =  `0x0040A408`
+* `offset FileName` = `0x0040BBC0`
+* `offset unk_40A508` = `0x0040A508`
+* `offset unk_40BDC0` = `0x0040BDC0`
+* `offset unk_40A608` = `0x0040A608`
+* `offset szRemoteFile` = `0x0040C1C0`
