@@ -81,4 +81,5 @@ The variables and constants, as named by IDA Pro’s disassembly process, found 
 ## Overall Algorithm of the Program
 
 ![Figure 1 Flowchart showing algorithm of _main function](flowchart-main.png "Figure 1 Flowchart showing algorithm of _main function")
+
 *Figure 1 Flowchart showing algorithm of _main function*
