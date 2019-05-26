@@ -5,8 +5,8 @@
 I started reverse engineering the Windows PE executable, 18203449.exe, in my reverse engineering environment, which is a virtual machine running Windows XP, by first using ExeinfoPe to identify some information on what was used to create the executable file. I discovered it was Microsoft Visual C++ ver. 8.0 / Visual Studio 2005.
 
 Next, I used IDA Pro to view and manually step through the generated Assembly language code from 18203449.exe, to identify constants, variables, and function or subroutine calls, especially the ones that were user created and to see their code implementation and structure. I started from the main function of the code.
-In the _main function of the assembly code, I looked through it to get an overview of what was happening. I looked out for:
-* The functions or subroutines that are called in the main function. The functions that are called are sub_401000, sub_401160, sub_401080, and DeleteFileW
+In the `_main` function of the assembly code, I looked through it to get an overview of what was happening. I looked out for:
+* The functions or subroutines that are called in the main function. The functions that are called are `sub_401000`, `sub_401160`, `sub_401080`, and `DeleteFileW`
 * The branches and structure of the code of this function. The main function had a straightforward flow with no branches
 
 In the sub_401000 function of the assembly code, I looked through it to get an overview of what was happening. I looked out for:
