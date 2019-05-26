@@ -111,7 +111,7 @@ Using the C programming language, I believe the code for sub_401000 would almost
       var_4 = 0;
   
       do {
-	      arg_4[var_4] = (arg_0[var_8] - (
+			  arg_4[var_4] = (arg_0[var_8] - (
 	        (var_8 & 0x80000003) < 0 ? 
 	        byte_40A300[((((var_8 & 0x80000003) - 1 ) | 0x0FFFFFFFC) + 1)] : 
 	        byte_40A300[(var_8 & 0x80000003)])
