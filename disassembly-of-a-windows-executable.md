@@ -67,7 +67,7 @@ The variables and constants, as named by IDA Pro’s disassembly process, found 
 * szServerName: This is a variable that holds a decrypted server name string, to be used in accessing a server. Its content was set earlier in the _main function before being used in sub_401080 function, where its memory address is passed into the InternetConnectW function call
 * szRemoteFile: This is a variable that holds a decrypted file name string. Its content was set earlier in the _main function before being used in sub_401080 function, where its memory address is passed into the FtpGetFileW function call, which would be the file to be transferred from an ftp server. The memory address of szRemoteFile is also passed into CreateProcessW function call, as the lpCommandLine parameter
 
-###sub_401160 Function
+### sub_401160 Function
 
 * hInternet: This variable is a local variable. It is a simple variable (i.e. not an array). Holds the value of a handle returned from the earlier InternetOpenW function call. This value is later on passed into function InternetCloseHandle when it is called
 * lpszNewRemoteFile: This variable is a local variable. It is a simple variable (i.e. not an array). Holds the pointer to the string value that is to be the name of the file (receiptPetrov_9316.pdf) to be created on the remote server (ftp.ucd.ie), which is passed as a parameter into the FtpPutFileW function call
@@ -83,3 +83,18 @@ The variables and constants, as named by IDA Pro’s disassembly process, found 
 ![Figure 1 Flowchart showing algorithm of _main function](flowchart-main.png "Figure 1 Flowchart showing algorithm of _main function")
 
 *Figure 1 Flowchart showing algorithm of _main function*
+
+* offset unk_40A000 = 0x0040A000
+* offset szServerName = 0x0040B9C0
+* offset unk_40A100 = 0x0040A100	
+* offset szUserName = 0x0040B3C0
+* offset  unk_40A200 = 0x0040A200
+* offset szPassword = 0x0040BFC0
+* offset unk_40A308 = 0x0040A308
+* offset szLocalFile = 0x0040B7C0
+* offset unk_40A408 =  0x0040A408
+* offset FileName = 0x0040BBC0
+* offset unk_40A508 = 0x0040A508
+* offset unk_40BDC0 = 0x0040BDC0
+* offset unk_40A608 = 0x0040A608
+* offset szRemoteFile = 0x0040C1C0
