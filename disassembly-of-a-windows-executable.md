@@ -31,9 +31,9 @@ The variables and constants, as named by IDA Pro’s disassembly process, found 
 
 ### _main Function
 
-* `szServerName`: This is a variable that would eventually hold a decrypted server name string. Together with the variable unk_40A000, they are passed into the function, sub_401000, that decrypts and produces the original server name string (which eventually was: ftp.ucd.ie), which is then stored in szServerName. In most programming languages, it would be a string-type variable. In x86 Assembly language and C programming language, it would be an array or array-like datatype (i.e. char szServerName [50])
-* unk_40A000: This is a variable that holds the string that’s the encrypted representation of a server name. Together with the variable szServerName, they are passed the function, sub_401000, which decrypts the string value stored in unk_40A000. In most programming languages, it would be a string-type variable. In x86 Assembly language and C programming language, it would be an array or array-like datatype (i.e. char unk_40A000[200])
-* szUserName: This is a variable that would eventually hold a decrypted username string, to be used in accessing a server. Together with the variable unk_40A100, they are passed into the function, sub_401000, that decrypts and produces the original username string (which eventually was: ahmed@ucd.ie), which is then stored in szUserName. In most programming languages, it would be a string-type variable. In x86 Assembly language and C programming language, it would be an array or array-like datatype (i.e. char szUserName[50])
+* `szServerName`: This is a variable that would eventually hold a decrypted server name string. Together with the variable `unk_40A000`, they are passed into the function, `sub_401000`, that decrypts and produces the original server name string (which eventually was: `ftp.ucd.ie`), which is then stored in `szServerName`. In most programming languages, it would be a string-type variable. In x86 Assembly language and C programming language, it would be an array or array-like datatype (i.e. `char szServerName[50]`)
+* `unk_40A000`: This is a variable that holds the string that’s the encrypted representation of a server name. Together with the variable `szServerName`, they are passed the function, `sub_401000`, which decrypts the string value stored in `unk_40A000`. In most programming languages, it would be a string-type variable. In x86 Assembly language and C programming language, it would be an array or array-like datatype (i.e. `char unk_40A000[200]`)
+* `szUserName`: This is a variable that would eventually hold a decrypted username string, to be used in accessing a server. Together with the variable `unk_40A100`, they are passed into the function, `sub_401000`, that decrypts and produces the original username string (which eventually was: `ahmed\@ucd.ie`), which is then stored in `szUserName`. In most programming languages, it would be a string-type variable. In x86 Assembly language and C programming language, it would be an array or array-like datatype (i.e. `char szUserName[50]`)
 * unk_40A100: This is a variable that holds the string that’s the encrypted representation of a username. Together with the variable szUserName, they are passed into the function, sub_401000, which decrypts the string value stored in unk_40A100. In most programming languages, it would be a string-type variable. In x86 Assembly language and C programming language, it would be an array or array-like datatype (i.e. char unk_40A100[200])
 * szUserPassword: This is a variable that would eventually hold a decrypted password string, to be used in accessing a server. Together with the variable unk_40A200, they are passed into the function, sub_401000, that decrypts and produces the original password string (which eventually was: $ecret123), which is then stored in szUserPassword. In most programming languages, it would be a string-type variable. In x86 Assembly language and C programming language, it would be an array or array-like datatype (i.e. char szUserName[50])
 * unk_40A200: This is a variable that holds the string that’s the encrypted representation of a password. Together with the variable szUserPassword, they are passed into the function, sub_401000, which decrypts the string value stored in unk_40A200. In most programming languages, it would be a string-type variable. In x86 Assembly language and C programming language, it would be an array or array-like datatype (i.e. char unk_40A200[200])
@@ -99,7 +99,7 @@ The variables and constants, as named by IDA Pro’s disassembly process, found 
 * `offset unk_40A608` = `0x0040A608`
 * `offset szRemoteFile` = `0x0040C1C0`
 
-## De-Obfuscation Algorithm(s) of sub_401000
+## De-Obfuscation Algorithm of sub_401000
 
 Using the C programming language, I believe the code for sub_401000 would almost look exactly like this:
 
@@ -124,15 +124,13 @@ Using the C programming language, I believe the code for sub_401000 would almost
       return;
     }
 
-As I indicated in the code comment above, byte_40A300 is a string constant that is very important to the decrypting of the encrypted string being reference by the *arg_0 function argument. In C, byte_40A300, could be define using the `#define pre-processor` so that it can be accessible to the sub_401000 as above:
+As I indicated in the code comment above, byte_40A300 is a string constant that is very important to the decrypting of the encrypted string being reference by the *arg_0 function argument. In C, byte_40A300, could be define using the `#define` pre-processor so that it can be accessible to the sub_401000 as above:
 
-    
     #define byte_40A300 "\tpkd"
-    
 
 The ASCII code equivalent, in hexadecimal form, for the characters in the string are: \\t (TAB) = 0x9, p = 0x70, k = 6B, d = 64.
 
-## Algorithm(s) of Other (Non-Standard) Function(s)
+## Algorithms of Other (Non-Standard) Functions
 
 ### sub_401080
 
@@ -140,3 +138,16 @@ The ASCII code equivalent, in hexadecimal form, for the characters in the string
 
 *Figure 2 Flowchart showing algorithm of sub_401080*
 
+* offset szServerName = 0x0040B9C0
+* offset szUserName = 0x0040B3C0
+* offset szPassword = 0x0040BFC0
+* offset szRemoteFile = 0x0040C1C0
+
+### sub_401160
+![Figure 3 Flowchart showing algorithm of sub_401160](flowchart-sub-401160.png "Figure 3 Flowchart showing algorithm of sub_401160")
+
+*Figure 3 Flowchart showing algorithm of sub_401160*
+
+* offset szServerName = 0x0040B9C0
+* offset szUserName = 0x0040B3C0
+* offset szPassword = 0x0040BFC0
