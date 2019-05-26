@@ -1,6 +1,6 @@
 # Program Data Stored in Memory
 
-The data region of the Windows executable being reversed-engineered, as shown in IDA Pro:
+The relevant snippets from the data region of the Windows executable being reversed-engineered, as shown in IDA Pro:
 
     
 		.data:0040A000                 ;org 40A000h
