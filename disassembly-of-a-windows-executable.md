@@ -127,7 +127,7 @@ Using the C programming language, I believe the code for sub_401000 would almost
 As I indicated in the code comment above, byte_40A300 is a string constant that is very important to the decrypting of the encrypted string being reference by the *arg_0 function argument. In C, byte_40A300, could be define using the `#define pre-processor` so that it can be accessible to the sub_401000 as above:
 
     
-    \#define byte_40A300 "\\tpkd"
+    #define byte_40A300 "\tpkd"
     
 
 The ASCII code equivalent, in hexadecimal form, for the characters in the string are: \\t (TAB) = 0x9, p = 0x70, k = 6B, d = 64.
