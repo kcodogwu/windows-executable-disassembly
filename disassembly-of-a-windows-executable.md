@@ -98,3 +98,30 @@ The variables and constants, as named by IDA Pro’s disassembly process, found 
 * `offset unk_40BDC0` = `0x0040BDC0`
 * `offset unk_40A608` = `0x0040A608`
 * `offset szRemoteFile` = `0x0040C1C0`
+
+## De-Obfuscation Algorithm(s) of sub_401000
+
+Using the C programming language, I believe the code for sub_401000 would almost look exactly like this:
+
+    void sub_401000(char *arg_0, char *arg_4) {
+      int var_4;
+      int var_8;
+
+      var_8 = (int)(0x7F & (arg_0[0] ^ byte_40A300[0])); // byte_40A300 = "\tpkd"
+      var_4 = 0;
+  
+      do {
+	      arg_4[var_4] = (arg_0[var_8] - (
+	        (var_8 & 0x80000003) < 0 ? 
+	        byte_40A300[((((var_8 & 0x80000003) - 1 ) | 0x0FFFFFFFC) + 1)] : 
+	        byte_40A300[(var_8 & 0x80000003)])
+	      );
+	
+	      var_4++;
+	      var_8++;
+      } while (arg_4[var_4 - 1] != '\0');
+  
+      return;
+    }
+		
+
